@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  BIO PRO — LINK PAGE TEMPLATE v1.0
+  Estilo: Linktree Premium · Mobile-first
+
+  ADAPTADO PARA: Assados de Frango e Carne Assada
+
+  VARIÁVEIS PARA SUBSTITUIR (Ctrl+H):
+  Vitrine do Frango            → Nome do negócio
+  Assados & Carnes             → Subtítulo
+  Localização              → Cidade
+  Sáb–Dom 9h–14h30        → Horários de funcionamento
+  5547996507675         → Seu WhatsApp
+  vitrinedofrango          → Instagram (opcional)
+  Endereço do local → Endereço completo
+  Google Maps URL          → URL do mapa (copiar do Google Maps)
+
+  IMAGENS A ADICIONAR:
+  - Logo/Foto de fundo (churrasqueira, assados)
+  - Foto de perfil (logo ou foto do melhor prato)
+  - Galeria com 3 fotos dos pratos
+============================================================ -->
+
+<title>Vitrine do Frango</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { height:100%; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0F0D0B;
+  color: #F0EBE3;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ── HERO / FUNDO ── */
+.hero-bg {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  filter: brightness(0.65) saturate(0.8);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, #0F0D0B 100%);
+}
+
+/* ── PERFIL ── */
+.profile-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -72px;
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 14px;
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF8C00, #E67E22, #FF8C00);
+  z-index: 0;
+}
+
+.avatar-img {
+  position: relative;
+  z-index: 1;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0F0D0B;
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: 4px; right: 4px;
+  width: 26px; height: 26px;
+  background: #FF8C00;
+  border: 2px solid #0F0D0B;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+  font-size: 12px;
+}
+
+.profile-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 600;
+  color: #F0EBE3;
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.profile-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8B7355;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.stars-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.stars-icons {
+  color: #FF8C00;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.stars-num {
+  font-size: 15px;
+  font-weight: 500;
+  color: #FF8C00;
+}
+
+.stars-aval {
+  font-size: 12px;
+  color: #6B5D4F;
+  font-weight: 300;
+}
+
+.status-open {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4CAF50;
+  margin-bottom: 4px;
+}
+
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4CAF50;
+  box-shadow: 0 0 8px rgba(76,175,80,0.7);
+  flex-shrink: 0;
+}
+
+/* ── GALERIA ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6B5D4F;
+  padding: 28px 24px 12px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 0 24px;
+}
+
+.galeria-item {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1C1916;
+}
+
+.galeria-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.galeria-item:active img { transform: scale(1.06); }
+
+/* ── BOTÕES DE AÇÃO ── */
+.atendimento-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6B5D4F;
+  padding: 28px 24px 12px;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 24px;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 22px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: transform 0.15s, opacity 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-action:active { transform: scale(0.97); opacity: 0.88; }
+
+.btn-action.primary {
+  background: linear-gradient(135deg, #FF8C00 0%, #E67E22 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(255,140,0,0.3);
+}
+
+.btn-action.secondary {
+  background: rgba(255,255,255,0.05);
+  color: #F0EBE3;
+  border: 1px solid rgba(255,140,0,0.2);
+}
+
+.btn-action.dark {
+  background: rgba(255,255,255,0.04);
+  color: #B0A090;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.btn-icon {
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.btn-text { flex: 1; }
+
+.btn-arrow {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+/* ── SERVIÇOS RÁPIDOS ── */
+.servicos-wrap {
+  padding: 0 24px;
+  margin-top: 0;
+}
+
+.servicos-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.servicos-scroll::-webkit-scrollbar { display: none; }
+
+.servico-chip {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,140,0,0.15);
+  border-radius: 14px;
+  padding: 14px 16px;
+  min-width: 130px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.servico-chip:active { transform: scale(0.97); border-color: rgba(255,140,0,0.4); }
+
+.chip-nome {
+  font-size: 13px;
+  font-weight: 500;
+  color: #F0EBE3;
+  margin-bottom: 4px;
+}
+
+.chip-preco {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FF8C00;
+}
+
+.chip-agendar {
+  font-size: 11px;
+  color: #6B5D4F;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── LOCALIZAÇÃO ── */
+.loc-section {
+  padding: 0 24px;
+  margin-top: 28px;
+}
+
+.loc-card {
+  background: linear-gradient(135deg, rgba(255,140,0,0.08), rgba(255,140,0,0.02));
+  border: 1px solid rgba(255,140,0,0.25);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(255,140,0,0.1);
+}
+
+.loc-map-iframe {
+  height: 280px;
+  overflow: hidden;
+  border-bottom: none;
+  position: relative;
+  background: linear-gradient(135deg, #1a1410, #2a1f15);
+}
+
+.loc-map-iframe iframe {
+  width: 100%; height: 100%;
+  border: none; display: block;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.loc-info {
+  padding: 24px 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  border-top: 1px solid rgba(255,140,0,0.15);
+  background: linear-gradient(135deg, rgba(255,140,0,0.03), transparent);
+}
+
+.loc-row {
+  display: flex; align-items: center; gap: 12px;
+}
+
+.loc-icon {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,140,0,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(255,140,0,0.15), rgba(255,140,0,0.05));
+}
+
+.loc-text { font-size: 14px; color: rgba(240,235,227,0.75); line-height: 1.5; }
+.loc-text strong {
+  display: block; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  color: #FF8C00; margin-bottom: 4px;
+}
+
+.loc-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 8px 18px 0;
+  background: linear-gradient(135deg, rgba(255,140,0,0.15), rgba(255,140,0,0.08));
+  border: 1px solid rgba(255,140,0,0.3);
+  color: #FF8C00; text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  padding: 14px 16px; border-radius: 14px;
+  transition: all 0.2s ease;
+}
+.loc-btn:active {
+  background: rgba(255,140,0,0.2);
+  transform: scale(0.98);
+}
+
+/* ── HORÁRIOS ── */
+.horarios-wrap {
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horario-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,140,0,0.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: border-color 0.2s;
+}
+
+.horario-row.today {
+  border-color: rgba(255,140,0,0.35);
+  background: rgba(255,140,0,0.05);
+}
+
+.h-left { display: flex; flex-direction: column; gap: 2px; }
+
+.h-dia {
+  font-size: 13px; font-weight: 400;
+  color: #F0EBE3;
+}
+
+.horario-row.today .h-dia { color: #FF8C00; font-weight: 500; }
+
+.h-hoje {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #FF8C00; opacity: 0.7;
+}
+
+.h-right { display: flex; align-items: center; gap: 10px; }
+
+.h-hora {
+  font-size: 13px; font-weight: 300;
+  color: #7A6D60;
+  font-variant-numeric: tabular-nums;
+}
+
+.h-status {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 20px;
+}
+.h-status.open  { background: rgba(76,175,80,0.1); color: #4CAF50; }
+.h-status.closed { background: rgba(122,112,96,0.08); color: #5A4F42; }
+
+/* ── FOOTER ── */
+.footer {
+  padding: 36px 24px 48px;
+  text-align: center;
+}
+
+.footer-divider {
+  width: 32px; height: 1px;
+  background: rgba(255,140,0,0.2);
+  margin: 0 auto 20px;
+}
+
+.footer-credit {
+  font-size: 11px;
+  color: #3D3530;
+}
+
+.footer-credit a {
+  color: #6B5D4F;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════
+  HERO + PERFIL
+  https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80    → URL da foto de fundo (paisagem do salão)
+  https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80  → URL da foto de perfil (circular)
+  Suélen Camargo Beauty   → Ex: Suélen Camargo Beauty
+  Salão & Estética        → Ex: Salão & Estética
+  Joinville       → Ex: Joinville
+  4.9         → Ex: 4.9
+  27 avaliações     → Ex: 27 avaliações
+  (status é gerado automaticamente pelo script de horários abaixo)
+════════════════════════════════ -->
+
+<!-- HERO -->
+<div class="hero-bg">
+  <img src="imagens/fundo.png" alt="Suélen Camargo Beauty">
+</div>
+
+<!-- PERFIL -->
+<div class="profile-area">
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+    <img class="avatar-img" src="imagens/logo.png" alt="Suélen Camargo Beauty">
+    <div class="avatar-badge">✓</div>
+  </div>
+
+  <div class="profile-name">Vitrine do Frango</div>
+  <div class="profile-sub">Assados & Carnes · Retirada</div>
+
+  <div class="stars-row">
+    <div class="stars-icons">★★★★★</div>
+    <div class="stars-num">4.8</div>
+    <div class="stars-aval">(34 avaliações)</div>
+  </div>
+
+  <div class="status-open" id="status-bar">
+    <div class="status-dot" id="status-dot"></div>
+    <span id="status-text">Verificando horário...</span>
+  </div>
+</div>
+
+<!-- GALERIA -->
+<div class="section-label">GALERIA</div>
+<div class="galeria">
+  <div class="galeria-item"><img src="imagens/fundo.png" alt=""></div>
+  <div class="galeria-item"><img src="imagens/fundo.png" alt=""></div>
+  <div class="galeria-item"><img src="imagens/fundo.png" alt=""></div>
+</div>
+
+<!-- CARDÁPIO -->
+<div class="section-label">CARDÁPIO</div>
+<div class="servicos-wrap">
+  <div class="servicos-scroll">
+
+    <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Frango%20com%20recheio%20🍗" target="_blank">
+      <div class="chip-nome">Frango C/ recheio</div>
+      <div class="chip-preco">R$58,00</div>
+      <div class="chip-agendar">Reservar →</div>
+    </a>
+
+     <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Frango%20sem%20recgeio%20🍗" target="_blank">
+      <div class="chip-nome">Frango S/ recheio</div>
+      <div class="chip-preco">R$53,00</div>
+      <div class="chip-agendar">Reservar →</div>
+    </a>
+
+
+    <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Carne%20assada%20🥩" target="_blank">
+      <div class="chip-nome">Cernse Assada</div>
+      <div class="chip-preco">R$98,00 Kg</div>
+      <div class="chip-agendar">Reservar →</div>
+    </a>
+
+
+
+  </div>
+</div>
+
+<!-- BOTÕES DE AÇÃO -->
+<div class="atendimento-label">FAÇA SUA RESERVA</div>
+<div class="botoes">
+
+  <a class="btn-action primary" href="https://wa.me/5547996507675?text=Oi!%20Gostaria%20de%20fazer%20uma%20reserva%20🍗" target="_blank">
+    <div class="btn-icon">📞</div>
+    <div class="btn-text">Reservar pelo WhatsApp</div>
+    <div class="btn-arrow">›</div>
+  </a>
+
+  <a class="btn-action secondary" href="https://instagram.com/vitrinedofrango" target="_blank">
+    <div class="btn-icon">📸</div>
+    <div class="btn-text">Ver no Instagram</div>
+    <div class="btn-arrow">›</div>
+  </a>
+
+  <a class="btn-action dark" href="https://wa.me/5547996507675?text=Quais%20são%20os%20preços%20e%20disponibilidade?" target="_blank">
+    <div class="btn-icon">💰</div>
+    <div class="btn-text">Consultar preços e disponibilidade</div>
+    <div class="btn-arrow">›</div>
+  </a>
+
+</div>
+
+<!-- ═══════════════════════════════
+  LOCALIZAÇÃO
+  https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.3!2d-48.849!3d-26.304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDE4JzE0LjQiUyA0OMKwNTAnNTYuNCJX!5e0!3m2!1spt-BR!2sbr!4v1700000000  → URL do iframe do Google Maps
+    Como pegar: Google Maps → Compartilhar → Incorporar mapa → copiar só o src do iframe
+    Ex: https://www.google.com/maps/embed?pb=!1m18!...
+  R. Rio Grande do Sul, 702 · Centro · Joinville, SC → Ex: R. Rio Grande do Sul, 702 · Joinville, SC
+  Suélen Camargo Beauty  → nome do salão
+  Seg–Sex 9h–19h · Sáb 9h–17h     → Ex: Seg–Sex 9h–19h · Sáb 9h–17h
+════════════════════════════════ -->
+<div class="section-label">LOCALIZAÇÃO</div>
+<div class="loc-section">
+  <div class="loc-card">
+    <div class="loc-map-iframe">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.8!2d-49.0732!3d-26.2563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce50a5a1e1e1d%3A0x1e1e1e1e1e1e1e1e!2sR.%20Monsenhor%20Gercino%2C%204119%20-%20Jarivatuba%2C%20Joinville%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização Vitrine do Frango">
+      </iframe>
+    </div>
+    <div class="loc-info">
+      <div class="loc-row">
+        <div class="loc-icon">📍</div>
+        <div class="loc-text">
+          <strong>Endereço</strong>
+          R. Monsenhor Gercino, 4119 · Jarivatuba · Joinville, SC
+        </div>
+      </div>
+      <div class="loc-row">
+        <div class="loc-icon">🕐</div>
+        <div class="loc-text">
+          <strong>Horário</strong>
+          Sáb–Dom 9h–14h30 · Retirada no local
+        </div>
+      </div>
+    </div>
+    <a class="loc-btn" href="https://maps.google.com/?q=R.+Monsenhor+Gercino,+4119,+Jarivatuba,+Joinville,+SC" target="_blank">
+      📍 &nbsp; Abrir no Google Maps
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-divider"></div>
+  <div class="footer-credit">Criado por <a href="#">Bio Pro</a></div>
+</div>
+
+
+<script>
+/* ═══════════════════════════════════════════════════
+   BIO PRO — SCRIPT DE STATUS AUTOMÁTICO
+   
+   Configure os horários do salão abaixo.
+   Dias: 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb
+   null = fechado nesse dia
+   
+   [[HORARIOS_CONFIG]] — edite os valores abaixo:
+═══════════════════════════════════════════════════ */
+
+const HORARIOS = {
+  0: { abre: '09:00', fecha: '14:30' },  // Domingo 9h – 14h30
+  1: null,                    // Segunda — fechado
+  2: null,                    // Terça — fechado
+  3: null,                    // Quarta — fechado
+  4: null,                    // Quinta — fechado
+  5: null,                    // Sexta — fechado
+  6: { abre: '09:00', fecha: '14:30' },  // Sábado 9h – 14h30
+};
+
+/* ─────────────────────────────────────────────────
+   NÃO PRECISA MEXER ABAIXO DESTA LINHA
+───────────────────────────────────────────────── */
+
+function formatHora(str) {
+  const [h, m] = str.split(':').map(Number);
+  return m === 0 ? `${h}h` : `${h}h${String(m).padStart(2,'0')}`;
+}
+
+function toMinutos(str) {
+  const [h, m] = str.split(':').map(Number);
+  return h * 60 + m;
+}
+
+function atualizarStatus() {
+  const agora   = new Date();
+  const diaSem  = agora.getDay();
+  const minAtual = agora.getHours() * 60 + agora.getMinutes();
+
+  const barEl  = document.getElementById('status-bar');
+  const dotEl  = document.getElementById('status-dot');
+  const txtEl  = document.getElementById('status-text');
+  if (!barEl || !txtEl) return;
+
+  const hoje = HORARIOS[diaSem];
+
+  if (!hoje) {
+    // Fechado hoje — mostra quando abre
+    let proximoDia = null;
+    for (let i = 1; i <= 7; i++) {
+      const d = (diaSem + i) % 7;
+      if (HORARIOS[d]) { proximoDia = d; break; }
+    }
+    const dias = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+    const msg = proximoDia !== null
+      ? `Fechado · Abre ${dias[proximoDia]} às ${formatHora(HORARIOS[proximoDia].abre)}`
+      : 'Fechado';
+
+    txtEl.textContent = msg;
+    barEl.style.color = '#6B5D4F';
+    dotEl.style.background = '#4A3F35';
+    dotEl.style.boxShadow = 'none';
+    return;
+  }
+
+  const minAbre  = toMinutos(hoje.abre);
+  const minFecha = toMinutos(hoje.fecha);
+  const minAviso = 60; // avisa "fechando em breve" 60min antes
+
+  if (minAtual < minAbre) {
+    // Ainda não abriu
+    txtEl.textContent = `Abre hoje às ${formatHora(hoje.abre)}`;
+    barEl.style.color = '#8A7A68';
+    dotEl.style.background = '#8A7A68';
+    dotEl.style.boxShadow = 'none';
+
+  } else if (minAtual >= minAbre && minAtual < (minFecha - minAviso)) {
+    // Aberto normalmente
+    txtEl.textContent = `Aberto agora · até ${formatHora(hoje.fecha)}`;
+    barEl.style.color = '#4CAF50';
+    dotEl.style.background = '#4CAF50';
+    dotEl.style.boxShadow = '0 0 8px rgba(76,175,80,0.7)';
+
+  } else if (minAtual >= (minFecha - minAviso) && minAtual < minFecha) {
+    // Fechando em breve
+    const restam = minFecha - minAtual;
+    txtEl.textContent = `Fechando em ${restam} min · até ${formatHora(hoje.fecha)}`;
+    barEl.style.color = '#E8A838';
+    dotEl.style.background = '#E8A838';
+    dotEl.style.boxShadow = '0 0 8px rgba(232,168,56,0.6)';
+
+  } else {
+    // Fechado — mostra quando abre amanhã
+    let proximoDia = null;
+    for (let i = 1; i <= 7; i++) {
+      const d = (diaSem + i) % 7;
+      if (HORARIOS[d]) { proximoDia = d; break; }
+    }
+    const dias = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+    const msg = proximoDia !== null
+      ? `Fechado · Abre ${dias[proximoDia]} às ${formatHora(HORARIOS[proximoDia].abre)}`
+      : 'Fechado no momento';
+
+    txtEl.textContent = msg;
+    barEl.style.color = '#6B5D4F';
+    dotEl.style.background = '#4A3F35';
+    dotEl.style.boxShadow = 'none';
+  }
+}
+
+// Roda imediatamente e atualiza a cada minuto
+atualizarStatus();
+setInterval(atualizarStatus, 60000);
+</script>
+
+</body>
+</html>
