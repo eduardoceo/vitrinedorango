@@ -399,6 +399,172 @@ body {
   transform: scale(0.98);
 }
 
+/* ── COMBOS ── */
+.combos-section {
+  padding: 28px 24px;
+  margin-top: 8px;
+}
+
+.combo-card {
+  background: linear-gradient(135deg, rgba(255,140,0,0.15), rgba(255,140,0,0.05));
+  border: 2px solid rgba(255,140,0,0.3);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.combo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.combo-icon {
+  font-size: 28px;
+}
+
+.combo-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FF8C00;
+}
+
+.combo-subtitle {
+  font-size: 11px;
+  color: #8B7355;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.combo-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.combo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,140,0,0.1);
+  border-radius: 10px;
+  font-size: 13px;
+  color: rgba(240,235,227,0.8);
+}
+
+.combo-item::before {
+  content: '✓';
+  color: #FF8C00;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.combo-addon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,140,0,0.15);
+}
+
+.addon-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #FF8C00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.addon-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255,140,0,0.08);
+  border: 1px solid rgba(255,140,0,0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #F0EBE3;
+}
+
+.addon-toggle:active {
+  background: rgba(255,140,0,0.15);
+  transform: scale(0.98);
+}
+
+.addon-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,140,0,0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.addon-toggle.active .addon-checkbox {
+  background: linear-gradient(135deg, #FF8C00, #E67E22);
+  border-color: #FF8C00;
+}
+
+.addon-toggle.active .addon-checkbox::after {
+  content: '✓';
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.addon-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.addon-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.addon-price {
+  font-size: 11px;
+  color: #FF8C00;
+  font-weight: 600;
+}
+
+.combo-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: linear-gradient(135deg, #FF8C00 0%, #E67E22 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 20px rgba(255,140,0,0.3);
+}
+
+.combo-btn:active {
+  transform: scale(0.97);
+}
+
 /* ── HORÁRIOS ── */
 .horarios-wrap {
   margin: 0 24px;
@@ -505,7 +671,7 @@ body {
   </div>
 
   <div class="profile-name">Vitrine do Frango</div>
-  <div class="profile-sub">Assados & Carnes · Retirada</div>
+  <div class="profile-sub">Assados de Carnes · Somente Retirada</div>
 
   <div class="stars-row">
     <div class="stars-icons">★★★★★</div>
@@ -534,25 +700,96 @@ body {
 
     <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Frango%20com%20recheio%20🍗" target="_blank">
       <div class="chip-nome">Frango C/ recheio</div>
-      <div class="chip-preco">R$58,00</div>
+      <div class="chip-preco">R$60,00</div>
       <div class="chip-agendar">Reservar →</div>
     </a>
 
-     <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Frango%20sem%20recgeio%20🍗" target="_blank">
+     <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Frango%20sem%20recheio%20🍗" target="_blank">
       <div class="chip-nome">Frango S/ recheio</div>
-      <div class="chip-preco">R$53,00</div>
+      <div class="chip-preco">R$55,00</div>
       <div class="chip-agendar">Reservar →</div>
     </a>
 
 
     <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20Carne%20assada%20🥩" target="_blank">
-      <div class="chip-nome">Cernse Assada</div>
+      <div class="chip-nome">Carne Assada</div>
       <div class="chip-preco">R$98,00 Kg</div>
+      <div class="chip-agendar">Reservar →</div>
+    </a>
+
+    <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20maionese%20🥩" target="_blank">
+      <div class="chip-nome">Maionse</div>
+      <div class="chip-preco">R$12,00 - 500G</div>
+      <div class="chip-agendar">Reservar →</div>
+    </a>
+
+    <a class="servico-chip" href="https://wa.me/5547996507675?text=Oi!%20Quero%20encomendar%20farofa" target="_blank">
+      <div class="chip-nome">Farofa</div>
+      <div class="chip-preco">R$10,00</div>
       <div class="chip-agendar">Reservar →</div>
     </a>
 
 
 
+  </div>
+</div>
+
+<!-- COMBOS COMPLETOS -->
+<div class="combos-section">
+  <div class="section-label">COMBOS ESPECIAIS 🔥</div>
+
+  <div class="combo-card">
+    <div class="combo-header">
+      <div class="combo-icon">🍗</div>
+      <div>
+        <div class="combo-title">Combo Completo</div>
+        <div class="combo-subtitle">Sua refeição perfeita</div>
+      </div>
+    </div>
+
+    <div class="combo-items">
+      <div class="combo-item" id="frango-option">Frango com recheio</div>
+      <div class="combo-item">Farofa</div>
+      <div class="combo-item">Maionese</div>
+    </div>
+
+    <div class="combo-addon">
+      <div class="addon-label">Tipo de frango</div>
+
+      <div class="addon-toggle active" id="addon-com-recheio" onclick="selectFrango(this, 'com-recheio')">
+        <div class="addon-checkbox"></div>
+        <div class="addon-text">
+          <div class="addon-name">Frango Assado</div>
+        </div>
+      </div>
+
+      <div class="addon-toggle" id="addon-sem-recheio" onclick="selectFrango(this, 'sem-recheio')">
+        <div class="addon-checkbox"></div>
+        <div class="addon-text">
+          <div class="addon-name">Frango sem recheio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="combo-addon">
+      <div class="addon-label">Adicionar ao combo</div>
+
+      <div class="addon-toggle" id="addon-refri" onclick="toggleAddon(this)">
+        <div class="addon-checkbox"></div>
+        <div class="addon-text">
+          <div class="addon-name">+ Refrigerante</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="combo-summary" style="display:none; padding: 12px; background: rgba(255,140,0,0.1); border-radius: 10px; margin-bottom: 12px; font-size: 12px; color: rgba(240,235,227,0.7); border: 1px solid rgba(255,140,0,0.2);">
+      <strong style="color: #FF8C00;">Seu combo inclui:</strong><br>
+      <span id="summary-items">Frango com recheio + Farofa + Maionese</span>
+    </div>
+
+    <a class="combo-btn" href="https://wa.me/5547996507675?text=Oi!%20Quero%20pedir%20um%20Combo%20Completo%20🍗" target="_blank">
+      📱 Pedir Combo Completo
+    </a>
   </div>
 </div>
 
@@ -606,7 +843,7 @@ body {
         <div class="loc-icon">📍</div>
         <div class="loc-text">
           <strong>Endereço</strong>
-          R. Monsenhor Gercino, 4119 · Jarivatuba · Joinville, SC
+          R. Monsenhor Gercino, 4105 · Jarivatuba · Joinville, SC
         </div>
       </div>
       <div class="loc-row">
@@ -744,6 +981,40 @@ function atualizarStatus() {
 // Roda imediatamente e atualiza a cada minuto
 atualizarStatus();
 setInterval(atualizarStatus, 60000);
+
+/* ═══════════════════════════════════════════════════
+   INTERATIVIDADE DOS COMBOS
+═══════════════════════════════════════════════════ */
+
+let frangoType = 'com-recheio';
+
+function selectFrango(element, type) {
+  document.getElementById('addon-com-recheio').classList.remove('active');
+  document.getElementById('addon-sem-recheio').classList.remove('active');
+  element.classList.add('active');
+  frangoType = type;
+  updateComboSummary();
+}
+
+function toggleAddon(element) {
+  element.classList.toggle('active');
+  updateComboSummary();
+}
+
+function updateComboSummary() {
+  const refriCheckbox = document.getElementById('addon-refri');
+  const summaryEl = document.getElementById('combo-summary');
+  const summaryItems = document.getElementById('summary-items');
+  const isRefriSelected = refriCheckbox.classList.contains('active');
+  const frangoLabel = frangoType === 'com-recheio' ? 'Frango com recheio' : 'Frango sem recheio';
+
+  if (isRefriSelected) {
+    summaryEl.style.display = 'block';
+    summaryItems.textContent = frangoLabel + ' + Farofa + Maionese + Refrigerante';
+  } else {
+    summaryEl.style.display = 'none';
+  }
+}
 </script>
 
 </body>
